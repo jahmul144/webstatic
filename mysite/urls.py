@@ -17,9 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from . import views
 from django.views.generic import TemplateView
+
+#good to use as becuase multiple apps you you could end up with conflicting view method references
+from about import views as about_views
+
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^home/$', views.start),
 	url(r'^$',TemplateView.as_view(template_name='homepage.html')),
-
+	url(r'^about/', about_views.contact),
 ]
