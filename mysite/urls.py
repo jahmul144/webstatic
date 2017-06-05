@@ -22,9 +22,10 @@ from django.views.generic import TemplateView
 from mysite.about import views as about_views
 
 urlpatterns = [
+	url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	url(r'^admin/', admin.site.urls),
 	url(r'^home/$', views.start),
 	url(r'^$',TemplateView.as_view(template_name='homepage.html')),
 	url(r'^about/', about_views.contact),
-	url(r'^admin/doc/', include('django.contrib.admindocs.urls'))
+	
 ]
